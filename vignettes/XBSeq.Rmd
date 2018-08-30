@@ -23,8 +23,9 @@ XBSeq is a novel algorithm for testing RNA-seq differential expression (DE), whe
 
 XBSeq can be installed from Bioconductor by 
 ```{r,eval=FALSE}
-source('http://www.bioconductor.org/biocLite.R')
-biocLite("XBSeq")
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install("XBSeq")
 ```
 ```{r,message = FALSE, warning=FALSE}
 library("XBSeq")
@@ -157,7 +158,7 @@ Now we will carry out DE analysis on the same dataset by using DESeq and then co
 If you have not installed DESeq before, DESeq is also available from Bioconductor
 
 ```{r,eval=FALSE}
-biocLite("DESeq")
+BiocManager::install("DESeq")
 ```
 
 Then DE analysis for DESeq can be carried out by:
